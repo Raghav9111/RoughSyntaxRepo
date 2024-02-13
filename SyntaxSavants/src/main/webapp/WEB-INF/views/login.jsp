@@ -9,7 +9,7 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <title>Sign in / Sign up Form</title>
 </head>
 <body>
@@ -75,7 +75,7 @@
               Sign up
             </button>
           </div>
-          <img src="login.svg" class="image" alt="" />
+          <img src="/assets/img/login.svg" class="image" alt="" />
         </div>
         
         <div class="panel right-panel">
@@ -86,7 +86,7 @@
               Sign in
             </button>
           </div>
-          <img src="reg.svg" class="image" alt="" />
+          <img src="/assets/img/reg.svg" class="image" alt="" />
           <button class="btn transparent" id="sign-in-btn" onclick="location.href='https://www.google.co.in/'">
             Medical Authority?
           </button>
@@ -94,6 +94,6 @@
       </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="/assets/JS/app.js"></script>
 </body>
 </html>
