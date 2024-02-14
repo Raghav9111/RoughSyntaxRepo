@@ -40,4 +40,9 @@ public class WebController {
 	public String accessDenied() {
 		return "accessDenied";
 	}
+	@RequestMapping(value="/medical")
+	public String medical()
+	{
+		return "hospital_sign_up";
+	}
 }

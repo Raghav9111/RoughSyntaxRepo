@@ -20,8 +20,12 @@ public class MedicalAuthority {
 	private String name;
 	@Column(nullable = false)
 	private String address;
+	
 	@Column(nullable = false)
 	private String phone;
+	
+	@Column(nullable = true)
+    private String certificate; // You will need to handle file uploading separately
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
