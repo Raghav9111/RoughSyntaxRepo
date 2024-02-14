@@ -9,4 +9,9 @@ public class WebController {
 	{
 		return "login";
 	}
+	@RequestMapping(value="/medical")
+	public String medical()
+	{
+		return "hospital_sign_up";
+	}
 }

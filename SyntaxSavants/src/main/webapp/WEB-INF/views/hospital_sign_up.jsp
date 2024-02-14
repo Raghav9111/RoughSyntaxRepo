@@ -28,38 +28,33 @@
             </div>
             <input type="submit" value="Login" class="btn solid" /> 
           </form>
-          <form action="#" class="sign-up-form">
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-map"></i>
-              <input type="text" placeholder="Address" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-phone"></i>
-              <input type="text" placeholder="Phone" minlength="10" maxlength="10" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Gender" />
-            </div>
-            
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="date" placeholder="DOB" />
-            </div>
-            
+          <form id="signupForm" action="#" method="post" class="sign-up-form">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="name" placeholder="Name" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-map"></i>
+                        <input type="text" name="address" placeholder="Address" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input type="text" name="phone" placeholder="Phone" minlength="10" maxlength="10" required />
+                    </div>
+                    <div class="input-field">
+                      <input type="file" name="certificate" accept=".pdf" />
+                    </div>
+                   
+                  
             <input type="submit" class="btn" value="Sign up" />
           
           </form>
@@ -88,10 +83,7 @@
           </div>
           <img src="/assets/img/reg.svg" class="image" alt="" />
           
-         <button  class="btn transparent"  id="sign-in-btn"  onclick="location.href='/medical'">  
-        	Medical Authority?
-        </button>
-        </div>
+               </div>
       </div>
     </div>
     
