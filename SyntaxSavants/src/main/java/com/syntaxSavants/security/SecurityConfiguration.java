@@ -39,7 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 	                
 	        .antMatchers("/admin/**").hasRole("ADMIN")	
 	        
-	        .antMatchers("/student/**").hasRole("STUDENT")
+	        .antMatchers("/medical/**").hasRole("MEDICAL")
 	        
 	        .and()        
 	        .formLogin().loginPage("/web/login").permitAll()

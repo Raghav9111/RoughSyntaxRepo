@@ -92,7 +92,7 @@
           </div>
           <img src="/assets/img/reg.svg" class="image" alt="" />
           
-         <button  class="btn transparent"  id="sign-in-btn"  onclick="location.href='/medical'">  
+         <button  class="btn transparent"  id="sign-in-btn"  onclick="location.href='/web/medical'">  
         	Medical Authority?
         </button>
         </div>

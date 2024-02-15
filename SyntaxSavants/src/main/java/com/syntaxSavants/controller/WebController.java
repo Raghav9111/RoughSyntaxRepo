@@ -30,8 +30,11 @@ public class WebController {
 	{
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User)principal;
+		System.out.println(user);
 		if(user.getRole().equals("ROLE_ADMIN"))
 			return "redirect:/admin/home";
+		else if(user.getRole().equals("ROLE_MEDICAL"))
+			return "redirect:/medical/home";
 		else
 			return "redirect:/student/home";
 	}
