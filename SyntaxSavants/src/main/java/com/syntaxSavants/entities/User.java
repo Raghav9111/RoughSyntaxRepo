@@ -42,6 +42,9 @@ public class User implements UserDetails
 	@Column(name = "role",nullable = false)
 	private String role;
 
+	@Column(name="active_status")
+	private Boolean activeStatus;
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() 
 	{
@@ -77,5 +80,13 @@ public class User implements UserDetails
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+
+	public User(String email, String password, String role, Boolean activeStatus) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.activeStatus = activeStatus;
 	}
 }

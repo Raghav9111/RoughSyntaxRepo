@@ -31,4 +31,16 @@ public class Patient {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+
+	public Patient(String name, String phone, String address, String gender, LocalDate dob, User user) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.address = address;
+		this.gender = gender;
+		this.dob = dob;
+		this.user = user;
+	}
+	
+	
 }

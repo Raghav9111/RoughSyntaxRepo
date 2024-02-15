@@ -21,50 +21,50 @@
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="email" placeholder="Email" name="email"/>
+              <input type="email" placeholder="Email" name="email" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" name="password"/>
+              <input type="password" placeholder="Password" name="password" required/>
             </div>
             <input type="submit" value="Login" class="btn solid" /> 
           </form>
           
           <!-- Register Form -->
           
-          <form action="#" class="sign-up-form">
+          <form action="/web/patient_reg" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" name="name" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" name="email" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="password" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-map"></i>
-              <input type="text" placeholder="Address" />
+              <input type="text" placeholder="Address" name="address" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-phone"></i>
-              <input type="text" placeholder="Phone" minlength="10" maxlength="10" />
+              <input type="text" placeholder="Phone" minlength="10" maxlength="10" name="phone" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Gender" />
+              <input type="text" placeholder="Gender" name="gender" required/>
             </div>
             
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="date" placeholder="DOB" />
+              <input type="date" placeholder="DOB" name="dob" required/>
             </div>
             
-            <input type="submit" class="btn" value="Sign up" />
+            <input type="submit" class="btn" value="Sign up" required/>
           
           </form>
         </div>

@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.syntaxSavants.entities.User;
+import com.syntaxSavants.models.PatientModel;
 import com.syntaxSavants.repositories.UserRepository;
 
 
@@ -30,4 +31,5 @@ public class UserService implements UserDetailsService
 		UserDetails user = userRepo.findByEmail(username).get();
 		return user;
 	}
+
 }

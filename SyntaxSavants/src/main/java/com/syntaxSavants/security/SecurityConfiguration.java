@@ -38,15 +38,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 	        .antMatchers("/web/**").permitAll()
 	                
 	        .antMatchers("/admin/**").hasRole("ADMIN")	
-	        
 	        .antMatchers("/medical/**").hasRole("MEDICAL")
-	        
+	        .antMatchers("/patient/**").hasRole("PATIENT")
+	        .antMatchers("/user/**").hasAnyRole("ADMIN","MEDICAL","PATIENT")
 	        .and()        
 	        .formLogin().loginPage("/web/login").permitAll()
 	        .defaultSuccessUrl("/web/home").usernameParameter("email")
 	        .and()
 	        .exceptionHandling().accessDeniedPage("/web/accessDenied").and()
-	        .logout().logoutRequestMatcher(new AntPathRequestMatcher("/web/logout")).logoutSuccessUrl("/web/login")
+	        .logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")).logoutSuccessUrl("/web/login")
 	        .and().httpBasic();		
 	}
 	 @Bean
