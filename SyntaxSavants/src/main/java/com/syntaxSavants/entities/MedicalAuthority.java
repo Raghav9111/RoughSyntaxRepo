@@ -31,7 +31,7 @@ public class MedicalAuthority {
 	@JoinColumn(name="user_id")
 	private User user;
 
-	public MedicalAuthority(String name, String address, String phone, String certificate, User user) {
+	public MedicalAuthority(String name, String address, String phone, String certificate , User user) {
 		super();
 		this.name = name;
 		this.address = address;

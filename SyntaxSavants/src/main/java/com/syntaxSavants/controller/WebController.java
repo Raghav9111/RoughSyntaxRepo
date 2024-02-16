@@ -1,11 +1,19 @@
 package com.syntaxSavants.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.UUID;
+
 import org.apache.catalina.Host;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.syntaxSavants.entities.User;
 import com.syntaxSavants.models.MedicalAuthorityModel;
@@ -79,18 +87,56 @@ public class WebController {
 	}
 	
 	@RequestMapping(value="/medicalAuthority_reg")
-	public String signUp(MedicalAuthorityModel model, ModelMap map) {
-		
-		String res = null;
-		res = hospitalService.saveMedical(model);
-		if(res.equals("Save Successful")) {
-			map.addAttribute("msg", "Hospital Authority Register Successful");
-			return "login";
-		}else {
-			map.addAttribute("errorMsg", "Hospital Authority not Register Successful");
-			return "login";
+	public String signUp(@RequestParam("file")MultipartFile multipartFile,MedicalAuthorityModel model, ModelMap map) {
+		final String baseDir = "E:\\SyntaxSavants";
+		byte data[];
+		try {
+			data = multipartFile.getBytes();
+			String filePath = "";
+			
+			String fileName = multipartFile.getOriginalFilename();
+			String fileType = multipartFile.getContentType();
+			
+			String extension = fileName.substring(fileName.lastIndexOf("."));
+			String uploadFile = UUID.randomUUID().toString()+extension;
+			
+			File dir = new File(baseDir,"files");
+			if(!dir.exists()) // Check Folder Existence; 
+			{
+				dir.mkdir();
+			}
+			
+			File file = new File(dir, uploadFile);
+			FileOutputStream fos = new FileOutputStream(file);
+			fos.write(data);
+			fos.flush();
+			fos.close();
+			
+			filePath =  file.getAbsolutePath();
+			
+			model.setCertificate(filePath);
+			
+			String res = null;
+			res = hospitalService.saveMedical(model);
+			if(res.equals("Save Successful")) {
+				map.addAttribute("msg", "Hospital Authority Register Successful");
+				return "login";
+			}else {
+				map.addAttribute("errorMsg", "Hospital Authority not Register Successful");
+				return "login";
+			}
+			
+		} catch (IOException e) {
+			return "redirect:/web/accessDenied";
 		}
 		
+	}
+	@RequestMapping("/verify/{email}")
+	public String verifyAccount(@PathVariable(name="email") String email) {
+		User user = (User)userService.loadUserByUsername(email);
+		user.setActiveStatus(true);
+		userService.saveUser(user);
+		return "login";
 	}
 	
 }

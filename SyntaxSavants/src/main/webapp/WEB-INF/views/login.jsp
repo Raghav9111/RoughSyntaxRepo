@@ -32,7 +32,7 @@
           
           <!-- Register Form -->
           
-          <form action="/web/patient_reg" class="sign-up-form">
+          <form action="/web/patient_reg" method ="POST" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>

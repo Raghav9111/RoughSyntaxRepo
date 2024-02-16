@@ -31,5 +31,9 @@ public class UserService implements UserDetailsService
 		UserDetails user = userRepo.findByEmail(username).get();
 		return user;
 	}
+	
+	public User saveUser(User user) {
+		return userRepo.save(user);
+	}
 
 }
