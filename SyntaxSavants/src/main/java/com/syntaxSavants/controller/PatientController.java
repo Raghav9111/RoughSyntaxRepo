@@ -17,6 +17,11 @@ public class PatientController {
 	{
 		return "Patient/pendingRequest";
 	}
+	@RequestMapping("/patientid")
+	public String id()
+	{
+		return "Patient/patientId";
+	}
 }
 
  
