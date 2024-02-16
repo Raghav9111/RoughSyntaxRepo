@@ -1,5 +1,6 @@
 package com.syntaxSavants.controller;
 
+import org.apache.catalina.Host;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -7,7 +8,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.syntaxSavants.entities.User;
+import com.syntaxSavants.models.MedicalAuthorityModel;
 import com.syntaxSavants.models.PatientModel;
+import com.syntaxSavants.services.HospitalAuthorityService;
 import com.syntaxSavants.services.PatientService;
 import com.syntaxSavants.services.UserService;
 @Controller
@@ -16,6 +19,9 @@ public class WebController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private HospitalAuthorityService hospitalService;
 	
 	@Autowired
 	private PatientService patientService;
@@ -71,4 +77,20 @@ public class WebController {
 	{
 		return "hospital_sign_up";
 	}
+	
+	@RequestMapping(value="/medicalAuthority_reg")
+	public String signUp(MedicalAuthorityModel model, ModelMap map) {
+		
+		String res = null;
+		res = hospitalService.saveMedical(model);
+		if(res.equals("Save Successful")) {
+			map.addAttribute("msg", "Hospital Authority Register Successful");
+			return "login";
+		}else {
+			map.addAttribute("errorMsg", "Hospital Authority not Register Successful");
+			return "login";
+		}
+		
+	}
+	
 }

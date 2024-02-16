@@ -32,7 +32,7 @@
           <!-- Register Form -->
           
           
-          <form id="signupForm" action="#" method="post" class="sign-up-form">
+          <form  action="/web/medicalAuthority_reg" method="post" class="sign-up-form">
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -55,6 +55,7 @@
                         <input type="text" name="phone" placeholder="Phone" minlength="10" maxlength="10" required />
                     </div>
                     <div class="input-field">
+                         <i class="fas fa-phone"></i>
                       <input type="file" name="certificate" accept=".pdf" />
                     </div>
                    
