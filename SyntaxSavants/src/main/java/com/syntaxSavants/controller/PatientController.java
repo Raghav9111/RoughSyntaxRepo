@@ -11,4 +11,12 @@ public class PatientController {
 	public String home() {
 		return "Patient/patientHome";
 	}
+	
+	@RequestMapping("/pendingRequest")
+	public String request()
+	{
+		return "Patient/pendingRequest";
+	}
 }
+
+ 
