@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SyntaxSavants</title>
+	<title>IT Stack School Web</title>
 	<link rel="stylesheet" href="/assets/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -23,8 +23,7 @@
               
                 </div>            
                 <br><br>
-                <h1 class="text-center">Hello!!
-                </h1>
+                <h1 class="text-center">Hospital</h1>
             </div>
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
@@ -49,17 +48,17 @@
         <main class="tm-main">
 
 
-<h1 class="alert-success">REQUEST</h1>
+<h1 class="alert-success">Reports Record</h1>
 
-&nbsp; <a href="#"> <b class="btn-sm btn-info">View Medical Authorities</b> </a>
+&nbsp; <a href="student/add_stud"> <b class="btn-sm btn-info">Upload Report</b> </a>
+&nbsp; <a href="student/add_stud"> <b class="btn-sm btn-info">Create Report Folder</b> </a>
+
 <table class="table table-striped mt-3">
 	<thead>
 		<tr>
-			<th>Hospital Name</th>
-			<th>Mobile Number</th>
-			<th>Address</th>
-			<th>Approve</th>
-			<th>Decline</th>
+			<th>Date</th>
+			<th>Description</th>
+			<th>Report</th>
 			
 		</tr>
 	</thead>
@@ -71,12 +70,9 @@
 				<td>${obj.email}</td>
 				
 				<td>
-				<a href="feerecord/addfee/${obj.rollNumber}" >	<b style="color:green;">Accept</b> </a>
+				<a href="feerecord/addfee/${obj.rollNumber}">	<b>Delete</b> </a>
 					
 				</td>
-				<td>
-				<a href="feerecord/addfee/${obj.rollNumber}">	<b style="color:red;">Decline</b> </a>
-					</td>
 			</tr>
 		</sp:forEach>
 	</tbody>
