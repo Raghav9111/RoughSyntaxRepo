@@ -5,13 +5,9 @@
 
 <h1 class="alert-success">Reports Record</h1>
 &nbsp;
+<input type="file" id="actual-btn" hidden/>
 
-<form action="/report/add_report/${folder.id}" method="POST" enctype="multipart/form-data">
-<input type="file" id="actual-btn" name="file" hidden/>
-<label for="actual-btn" ><b class="btn-sm btn-info" style="cursor:pointer;">Upload Report</b></label>
-<input type="submit" class="btn btn-danger btn-circle btn-sm" style="border-radius: 1000px" value="submit"/>
-
-</form>
+<label for="actual-btn" ><b class="btn-sm btn-info" style="cursor:pointer;">Upload Report</b> </label>
 <table class="table table-striped mt-3">
 	<thead>
 		<tr>

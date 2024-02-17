@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.syntaxSavants.entities.Folder;
@@ -58,9 +59,11 @@ public class PatientController {
 			return null;
 		}
 	}
-		@RequestMapping("/report")
-	public String report()
+	@RequestMapping("/report/{folderId}")
+	public String report(@PathVariable(name="folderId")Integer folderId, ModelMap map)
 	{
+		Folder folder = folderService.getFolderById(folderId);
+		map.addAttribute("folder", folder);
 		return "Patient/Reports";
 	}
 	

@@ -52,13 +52,12 @@
                     </div>
                     <div class="input-field">
                         <i class="fas fa-phone"></i>
-                        <input type="text" name="phone" placeholder="Phone" minlength="10" maxlength="10" required />
+                        <input type="text" name="phone" placeholder="Phone"  maxlength="10" required />
                     </div>
-                    <div class="input-field">
-                         <i class="fas fa-phone"></i>
-                      <input type="file" name="file" accept=".pdf" />
-                    </div>
-                   
+                  <input type="file" id="actual-btn" hidden/>
+
+				<label for="actual-btn" ><b class="btn-sm btn-info" style="cursor:pointer; text-decoration: underline;">Attach Certificate</b> </label>
+
                   
             <input type="submit" class="btn" value="Sign up" />
           

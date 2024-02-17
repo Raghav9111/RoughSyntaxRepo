@@ -35,5 +35,17 @@ public class Report {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
+	public Report(Date date, String description, String file, String uploadBy, Folder folder, Patient patient) {
+		super();
+		this.date = date;
+		this.description = description;
+		this.file = file;
+		this.uploadBy = uploadBy;
+		this.folder = folder;
+		this.patient = patient;
+	}
+    
+    
+
     
 }

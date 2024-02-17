@@ -38,4 +38,8 @@ public class FolderService {
 		 return flist;
 	}
 
+	public Folder getFolderById(Integer folderId) {
+		return folderRepo.findById(folderId).get();
+	}
+
 }

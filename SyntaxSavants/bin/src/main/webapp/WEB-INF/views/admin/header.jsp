@@ -20,24 +20,26 @@
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
-        <div class="tm-site-header">
-            <div class="mb-3 mx-auto tm-site-logo">
-                <!-- Your logo here -->
-            </div>            
-            <br><br>
+        
+        	<br>
+                <div class="mb-3 mx-auto tm-site-logo">
+                <img src="/assets/img/icon.jpeg"  height="200" style="border-radius:110px">
+                </div>            
+              <br><br><br>
             <h1 class="text-center">Hello!!</h1>
-        </div>
+                    
+              <br>
         <nav class="tm-nav" id="tm-nav">            
             <ul>
-                <li class="tm-nav-item "><a href="/medical/profile" class="tm-nav-link">
-                    <i class="fas fa-home"></i>
-                    Profile
-                </a></li>
-                <li class="tm-nav-item"><a href="/medical/home" class="tm-nav-link">
+                
+                <li class="tm-nav-item"><a href="/patient/report" class="tm-nav-link">
                     <i class="fas fa-pen"></i>
-                     Patients
+                    Reports
                 </a></li>
-                                   
+                <li class="tm-nav-item"><a href="/patient/pendingRequest" class="tm-nav-link">
+                    <i class="fas fa-users"></i>
+                    Requests
+                </a></li>                   
                 <li class="tm-nav-item"><a href="/user/logout/" class="tm-nav-link">
                   <i class="fas fa-key"></i>
                     Sign Out
@@ -45,12 +47,4 @@
             </ul>
         </nav>
     </div>
-    
-    <style>
-       .button:hover
-       {
-          background-color: #6c63ff;
-          color: white;
-       }
-    </style>
 </header>
