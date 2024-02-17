@@ -34,7 +34,7 @@
                     <i class="fas fa-home"></i>
                     Profile
                 </a></li>
-                <li class="tm-nav-item"><a href="/patient/report" class="tm-nav-link">
+                <li class="tm-nav-item"><a href="/patient/repo" class="tm-nav-link">
                     <i class="fas fa-pen"></i>
                     Reports
                 </a></li>
