@@ -56,4 +56,8 @@ public class PatientService {
 		}
 	}
 
+	public Patient getById(Integer patientID) {
+		return patientRepo.findById(patientID).get();
+	}
+
 }

@@ -115,12 +115,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </main>
 </div>
 <div class="form-popup" id="myForm">
-  <form action="#" class="form-container">
+  <form action="/folder/create_repo" class="form-container">
     <h3>Create Folder</h3>
 	<hr>
     <input type="text" placeholder="Title" name="title" required>
     <input type="text" placeholder="Description" name="description" required>
-
+	<input type="hidden" value="${patient.getPatientID()}" name="patientID">
     <button type="submit" class="btn">Add</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>

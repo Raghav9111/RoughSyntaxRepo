@@ -26,4 +26,14 @@ public class Folder {
     @ManyToOne
     @JoinColumn(name = "patient_id")
     private Patient patient;
+
+	public Folder(String title, Date date, String description, Patient patient) {
+		super();
+		this.title = title;
+		this.date = date;
+		this.description = description;
+		this.patient = patient;
+	}
+    
+    
 }
