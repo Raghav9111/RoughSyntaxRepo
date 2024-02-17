@@ -4,9 +4,10 @@
 
 
 <h1 class="alert-success">Reports Record</h1>
+&nbsp;
+<input type="file" id="actual-btn" hidden/>
 
-&nbsp; <a href="#"> <b class="btn-sm btn-info">Upload Report</b> </a>
-
+<label for="actual-btn" ><b class="btn-sm btn-info" style="cursor:pointer;">Upload Report</b> </label>
 <table class="table table-striped mt-3">
 	<thead>
 		<tr>

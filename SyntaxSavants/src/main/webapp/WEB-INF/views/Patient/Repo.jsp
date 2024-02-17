@@ -81,7 +81,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <h1 class="alert-success">Reports Record</h1>
 
 &nbsp; <a onclick="openForm()" style = "cursor: pointer;"> <b class="btn-sm btn-info">Create Report Folder</b> </a>
-&nbsp; <a href="student/add_stud"> <b class="btn-sm btn-info">Upload Report</b> </a>
+&nbsp; <input type="file" id="actual-btn" hidden/>
+
+<label for="actual-btn" ><b class="btn-sm btn-info" style="cursor:pointer;">Upload Report</b> </label>
 
 
 
