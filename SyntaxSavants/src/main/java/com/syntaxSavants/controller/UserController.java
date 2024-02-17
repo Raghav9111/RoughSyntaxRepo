@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 	@RequestMapping("/logout")
 	public String logout() {
-		return "login";
+		return "redirect:/web/login";
 	}
 }

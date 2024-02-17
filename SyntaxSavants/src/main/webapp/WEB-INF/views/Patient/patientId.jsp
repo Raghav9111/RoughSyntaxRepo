@@ -34,9 +34,12 @@
                             <p>${patient.dob}</p>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
+        
+        <a href="/patient/update"> <b class="btn-sm btn-info" style="margin-left:300px">Update Details</b> </a>
     </main>
 </div>
 

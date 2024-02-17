@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/templatemo-xtra-blog.css" rel="stylesheet">
+    <link href="/assets/css/header.css" rel="stylesheet">
   	<link href="/assets/css/patientId.css" rel="stylesheet">
 </head>
 <body>
@@ -29,18 +29,22 @@
         </div>
         <nav class="tm-nav" id="tm-nav">            
             <ul>
-                <li class="tm-nav-item "><a href="${ctxpath}/home" class="tm-nav-link">
+                <li class="tm-nav-item "><a href="/patient/patientid" class="tm-nav-link">
                     <i class="fas fa-home"></i>
                     Profile
                 </a></li>
-                <li class="tm-nav-item"><a href="${ctxpath}/patients" class="tm-nav-link">
+                <li class="tm-nav-item"><a href="/patient/report" class="tm-nav-link">
                     <i class="fas fa-pen"></i>
                     Reports
                 </a></li>
-                <li class="tm-nav-item"><a href="${ctxpath}/feesrecords" class="tm-nav-link">
+                <li class="tm-nav-item"><a href="/patient/pendingRequest" class="tm-nav-link">
                     <i class="fas fa-users"></i>
                     Requests
                 </a></li>                   
+                <li class="tm-nav-item"><a href="/user/logout/" class="tm-nav-link">
+                  <i class="fas fa-key"></i>
+                    Sign Out
+                </a></li>
             </ul>
         </nav>
     </div>

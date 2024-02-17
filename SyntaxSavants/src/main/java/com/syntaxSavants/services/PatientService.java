@@ -2,6 +2,7 @@ package com.syntaxSavants.services;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,20 @@ public class PatientService {
 		}
 		catch (Exception e) {
 			return e.getMessage();
+		}
+	}
+
+	public void get(User user) 
+	{
+		Optional<Patient> op= patientRepo.findById(user.getUserId());
+		
+		if(op.isPresent())
+		{
+			System.out.println("Object hai");
+		}
+		else
+		{
+			System.out.println("nhi hai");
 		}
 	}
 

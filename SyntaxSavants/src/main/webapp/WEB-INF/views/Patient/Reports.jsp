@@ -5,7 +5,7 @@
 
 <h1 class="alert-success">Reports Record</h1>
 
-&nbsp; <a href="student/add_stud"> <b class="btn-sm btn-info">Upload Report</b> </a>
+&nbsp; <a href="#"> <b class="btn-sm btn-info">Upload Report</b> </a>
 
 <table class="table table-striped mt-3">
 	<thead>
