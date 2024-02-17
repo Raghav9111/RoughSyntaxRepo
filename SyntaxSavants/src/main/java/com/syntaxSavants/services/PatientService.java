@@ -40,17 +40,19 @@ public class PatientService {
 		}
 	}
 
-	public void get(User user) 
+	public Patient get(User user) 
 	{
 		Optional<Patient> op= patientRepo.findByUser(user);
-		
+		Patient patient;
 		if(op.isPresent())
 		{
-			System.out.println("Object hai");
+			patient = op.get();
+			return patient;
 		}
 		else
 		{
-			System.out.println("nhi hai");
+			System.out.println("Optional is null");
+			return null;
 		}
 	}
 

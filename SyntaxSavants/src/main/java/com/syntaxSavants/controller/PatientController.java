@@ -3,8 +3,10 @@ package com.syntaxSavants.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.syntaxSavants.entities.Patient;
 import com.syntaxSavants.entities.User;
 import com.syntaxSavants.services.PatientService;
 
@@ -32,15 +34,19 @@ public class PatientController {
 	}
 
 	@RequestMapping("/repo")
-	public String repo()
+	public String repo(ModelMap map)
 	{
 		Object ob = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User)ob;
 		if(ob!=null)
 		{
-			patService.get(user);
+			Patient patient = patService.get(user);
+			map.addAttribute("patient", patient);
+			return "Patient/Repo";
 		}
-		return "Patient/Repo";
+		else {
+			return null;
+		}
 	}
 		@RequestMapping("/report")
 	public String report()
