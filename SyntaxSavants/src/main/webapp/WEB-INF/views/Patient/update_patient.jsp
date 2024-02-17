@@ -12,8 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/templatemo-xtra-blog.css" rel="stylesheet">
-    <style>
-       
+    <link href="/assets/css/update_patient.css">
+
+</head>
+<body>
+  <style>
 .card {
     background-color: #ffffff;
     border: 1px solid #dddddd;
@@ -73,9 +76,7 @@
         .form-group p {
             margin: 0;
         }
-    </style>
-</head>
-<body>
+</style>
 <header class="tm-header" id="tm-header">
     <div class="tm-header-wrapper">
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
