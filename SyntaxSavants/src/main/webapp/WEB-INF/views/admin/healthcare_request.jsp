@@ -32,11 +32,10 @@
 				<td>${obj.phone}</td>
 				<td><a href="#"><b>View</b> </a></td>
 				<td>
-				<a href="feerecord/addfee/${obj.rollNumber}" >	<b style="color:green;">Accept</b> </a>
-					
+				<a href="#" >	<b style="color:green;">Accept</b> </a>
 				</td>
 				<td>
-				<a href="feerecord/addfee/${obj.rollNumber}">	<b style="color:red;">Decline</b> </a>
+				<a href="#">	<b style="color:red;">Decline</b> </a>
 					</td>
 			</tr>
 		</c:forEach>

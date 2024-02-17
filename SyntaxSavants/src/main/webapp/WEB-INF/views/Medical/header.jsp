@@ -19,14 +19,14 @@
     <div class="tm-header-wrapper">
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
-        </button>
-        <div class="tm-site-header">
-            <div class="mb-3 mx-auto tm-site-logo">
-                <!-- Your logo here -->
-            </div>            
-            <br><br>
+         <br>
+                <div class="mb-3 mx-auto tm-site-logo">
+                <img src="/assets/img/icon.jpeg"  height="200" style="border-radius:110px">
+                </div>            
+              <br><br><br>
             <h1 class="text-center">Hello!!</h1>
-        </div>
+                    
+              <br>
         <nav class="tm-nav" id="tm-nav">            
             <ul>
                 <li class="tm-nav-item "><a href="/medical/" class="tm-nav-link">

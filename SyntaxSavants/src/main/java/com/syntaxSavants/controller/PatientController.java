@@ -68,6 +68,12 @@ public class PatientController {
 	public String update() {
 		return "Patient/update_patient";
 	}
+	
+	@RequestMapping("/updatePassword")
+	public String updatepass()
+	{	
+		return "Patient/updatePassword"; 
+	}
 
 }
 
