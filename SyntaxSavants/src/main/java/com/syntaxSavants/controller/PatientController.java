@@ -22,6 +22,20 @@ public class PatientController {
 	{
 		return "Patient/patientId";
 	}
+
+	@RequestMapping("/repo")
+	public String repo()
+	{
+		return "Patient/Repo";
+	}
+	
+
+	@RequestMapping("/report")
+	public String report()
+	{
+		return "Patient/Reports";
+	}
+
 }
 
  
