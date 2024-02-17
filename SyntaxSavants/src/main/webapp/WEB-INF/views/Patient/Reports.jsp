@@ -14,7 +14,8 @@
 			<th>Description</th>
 			<th>Uploaded By</th>
             <th>Date</th>
-			
+			<th>View</th>
+			<th>Delete</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -24,10 +25,11 @@
 				<td>${obj.name}</td>
 				<td>${obj.email}</td>
                 <td>${obj.email}</td>
-				
 				<td>
-				<a href="feerecord/addfee/${obj.rollNumber}"><b>View</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Delete</b> </a>
-					
+				<a href="#"><b>View</b> </a>
+				</td>
+				<td>
+				<a href="#"  style="color: red"><b>Delete</b> </a>
 				</td>
 			</tr>
 		</sp:forEach>
