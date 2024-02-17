@@ -7,11 +7,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Authority </title>
+    <title>Patient </title>
     <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/templatemo-xtra-blog.css" rel="stylesheet">
+    <link href="/assets/css/header.css" rel="stylesheet">
   	<link href="/assets/css/patientId.css" rel="stylesheet">
 </head>
 <body>
@@ -19,33 +19,38 @@
     <div class="tm-header-wrapper">
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
-         <br>
-                <div class="mb-3 mx-auto tm-site-logo">
-                <img src="/assets/img/icon.jpeg"  height="200" style="border-radius:110px">
-                </div>            
-              <br><br><br>
+        </button>
+        <div class="tm-site-header">
+            <div class="mb-3 mx-auto tm-site-logo">
+                <!-- Your logo here -->
+            </div>            
+            <br><br>
             <h1 class="text-center">Hello!!</h1>
-                    
-              <br>
+        </div>
         <nav class="tm-nav" id="tm-nav">            
             <ul>
-                <li class="tm-nav-item "><a href="/medical/" class="tm-nav-link">
+                <li class="tm-nav-item "><a href="/medical/profile" class="tm-nav-link">
                     <i class="fas fa-home"></i>
                     Profile
                 </a></li>
-                <li class="tm-nav-item"><a href="/medical/" class="tm-nav-link">
+                <li class="tm-nav-item"><a href="/medical/home" class="tm-nav-link">
                     <i class="fas fa-pen"></i>
-                    Patients
+                     Patients
                 </a></li>
-                                  
+                                   
+                <li class="tm-nav-item"><a href="/user/logout/" class="tm-nav-link">
+                  <i class="fas fa-key"></i>
+                    Sign Out
+                </a></li>
             </ul>
         </nav>
     </div>
     
     <style>
-    .button:hover {
-      background-color: #6c63ff;
-      color: white;
-    }
-   </style>
+       .button:hover
+       {
+          background-color: #6c63ff;
+          color: white;
+       }
+    </style>
 </header>

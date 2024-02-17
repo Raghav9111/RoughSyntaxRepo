@@ -21,7 +21,7 @@
 <c : forEach items="${slist}" var="obj">
 <div class="item">
   <a href="">
-  <img src="./285658_blue_folder_icon (1).png" height="10%" width="10%" alt=""/>
+  <img src="/assets/img/285658_blue_folder_icon (1).png" height="10%" width="10%" alt=""/>
   <p>${obj.title}</p>
 </a>
 </div>&nbsp;&nbsp;
