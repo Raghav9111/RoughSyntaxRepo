@@ -56,7 +56,7 @@
                     </div>
                   <input type="file" id="actual-btn" hidden/>
 
-				<label for="actual-btn" ><b class="btn-sm btn-info" style="cursor:pointer;">Upload Report</b> </label>
+				<label for="actual-btn" ><b class="btn-sm btn-info" style="cursor:pointer; text-decoration: underline;">Attach Certificate</b> </label>
 
                   
             <input type="submit" class="btn" value="Sign up" />
