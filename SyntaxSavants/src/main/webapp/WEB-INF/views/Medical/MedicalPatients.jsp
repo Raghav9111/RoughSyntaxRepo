@@ -6,7 +6,7 @@
 
 <h1 class="alert-success">Patients Record</h1>
 
-<style>
+ <style>
 
   .btn-custom {
     background-color: transparent;
@@ -18,9 +18,9 @@
     background-color: #6c63ff;
     color: #fff;
   }
-</style>
-</head>
-<body>
+</style> 
+
+
 
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
@@ -61,7 +61,7 @@
                 <td>${obj.gender}</td>
                 <td>${obj.dob}</td>
         </c : forEach>
-        <td><a href="feerecord/addfee/${obj.rollNumber}"><b>View</b> </a>
+        <td><a href="./viewPatient"><b>View</b> </a>
         </td>
 
 				
