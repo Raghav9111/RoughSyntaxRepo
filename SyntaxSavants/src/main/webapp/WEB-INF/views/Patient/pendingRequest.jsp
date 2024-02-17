@@ -19,13 +19,16 @@
 		</tr>
 	</thead>
 	<tbody>
-		<sp:forEach items="${slist}" var="obj">
+	
+			<c:forEach items="${slist}" var="obj">
 			<tr>
+				<tr>
 				<td>${obj.rollNumber}</td>
 				<td>${obj.name}</td>
 				<td>${obj.email}</td>
-				
-				<td>
+
+        </c:forEach>
+       <td>
 				<a href="feerecord/addfee/${obj.rollNumber}" >	<b style="color:green;">Accept</b> </a>
 					
 				</td>
@@ -33,7 +36,6 @@
 				<a href="feerecord/addfee/${obj.rollNumber}">	<b style="color:red;">Decline</b> </a>
 					</td>
 			</tr>
-		</sp:forEach>
 	</tbody>
 </table>
 

@@ -1,12 +1,10 @@
 <%@include file="header.jsp"%>
-<%@taglib prefix="sp" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
     
     <div class="container-fluid">
         <main class="tm-main">
 
 
-<h1 class="alert-success">Patients Record</h1>
+<h1 class="alert-success">Patients Request</h1>
 
  <style>
 
@@ -25,8 +23,8 @@
 
 
 <nav class="navbar navbar-light bg-light">
-  <form action="/medical/searchPatient" method="post" class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search patient" name="patientid" aria-label="Search">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search patient" aria-label="Search">
     <button class="btn btn-custom my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
@@ -36,34 +34,28 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</body>
-</html>
+
 
 
 <table class="table table-striped mt-3">
 	<thead>
 		<tr>
-		    <th>ID</th>
+			 <th>ID</th>
 			<th>Name</th>
 			<th>Phone</th>
 			<th>Address</th>
-      <th>Gender</th>
-      <th>DOB</th>
-      <th>View</th>
-			
+			<th>Request</th>
 		</tr>
 	</thead>
 	<tbody>
-
+		<c : forEach items="${slist}" var="obj">
 			<tr>
-				<td>${plist.patientID}</td>
-				<td>${plist.name}</td>
-				<td>${plist.phone}</td>
-                <td>${plist.address}</td>
-                <td>${plist.gender}</td>
-                <td><fmt:formatDate value="${plist.dob}" pattern="dd/MM/yyyy"/></td>
-        
-        <td><a href="./viewPatient"><b>View</b> </a>
+				<td>${obj.medicalAuthorityID}</td>
+				<td>${obj.name}</td>
+				<td>${obj.phone}</td>
+                <td>${obj.address}</td>
+        </c : forEach>
+        <td><a href="./viewPatient"><b style="color: blue">Request</b> </a>
         </td>
 
 				
@@ -71,7 +63,6 @@
 			</tr>
 	</tbody>
 </table>
-
 </main>
 </div>
 

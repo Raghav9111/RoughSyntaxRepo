@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.syntaxSavants.entities.MedicalAuthority;
 import com.syntaxSavants.entities.User;
 import com.syntaxSavants.models.MedicalAuthorityModel;
+import com.syntaxSavants.models.UpdateMedicalModel;
 import com.syntaxSavants.repositories.MedicalAuthorityRepo;
 import com.syntaxSavants.repositories.UserRepository;
 import com.syntaxSavants.security.MailService;
@@ -41,5 +42,18 @@ public class HospitalAuthorityService {
 		catch (Exception e) {
 			return e.getMessage();
 		}
+	}
+
+	public MedicalAuthority get(User user) {
+		return medicalRepo.findByUser(user).get();
+	}
+
+	public String updateMedical(UpdateMedicalModel authority, Integer id)
+	{
+		MedicalAuthority medical = medicalRepo.findById(id).get();
+		medical.setPhone(authority.getPhone());
+		medical.setAddress(authority.getAddress());
+		medicalRepo.save(medical);
+		return "Medical saved!";
 	}
 }

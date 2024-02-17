@@ -71,24 +71,23 @@
                           <h3 class="card-title">Hospital Profile</h3>
                       </div>
                       <div class="card-body">
-                          <form action="${ctxpath}/updatePatient" method="post">
+                          <form action="/medical/updateMedical" method="post">
                               <div class="form-group">
-                                  <label for="hospitalID">Hospital ID:</label>
-                                  <p>${patient.medeicalAuthorityID}</p>
+                                  <label for="hospitalID">Hospital ID:</label>&nbsp;&nbsp;&nbsp;${medical.medicalAuthorityID}
                               </div>
                               <div class="form-group">
                                   <label for="name">Name:</label>
-                                  <input type="text" id="name" name="name" value="${patient.name}" class="form-control" disabled>
+                                  <input type="text" id="name" name="name" value="${medical.name}" class="form-control" disabled>
                               </div>
                               <div class="form-group">
                                   <label for="phone">Phone:</label>
-                                  <input type="tel" id="phone" name="phone" value="${patient.phone}" class="form-control">
+                                  <input type="tel" id="phone" name="phone" value="${medical.phone}" class="form-control">
                               </div>
                               <div class="form-group">
                                   <label for="address">Address:</label>
-                                  <textarea id="address" name="address" class="form-control">${patient.address}</textarea>
+                                  <textarea id="address" name="address" class="form-control">${medical.address}</textarea>
                               </div>
-                               
+                               <input type="hidden" name="medicalAuthorityID" value="${medical.medicalAuthorityID}">
                             <button align="centre" type="submit" class="btn btn-primary">Update</button>
                           </form>
                       </div>
