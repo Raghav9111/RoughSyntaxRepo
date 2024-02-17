@@ -35,6 +35,11 @@ public class PatientController {
 	{
 		return "Patient/Reports";
 	}
+	
+	@RequestMapping("/update")
+	public String update() {
+		return "Patient/update_patient";
+	}
 
 }
 
