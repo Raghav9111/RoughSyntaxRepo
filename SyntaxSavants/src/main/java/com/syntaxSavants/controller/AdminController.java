@@ -20,4 +20,10 @@ public class AdminController
 	{
 		return "home";
 	}
+	
+	@RequestMapping(value = "/healthcare_request")	
+	public String request() 
+	{
+		return "admin/healthcare_request";
+	}
 }
