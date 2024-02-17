@@ -1,6 +1,7 @@
 package com.syntaxSavants.services;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,12 +20,12 @@ public class ReportService {
 	@Autowired
 	private ReportRepository reportRepo;
 	
-	public String saveReport(String filePath, Integer fid) {
+	public String saveReport(String filePath, Integer fid, String name) {
 		try
 		{
 			Folder folder = folderRepo.findById(fid).get();
 			Date date = new Date();
-			Report report = new Report(date, null, filePath, "Self", folder, folder.getPatient());
+			Report report = new Report(date, name, filePath, "Self", folder, folder.getPatient());
 			reportRepo.save(report);
 			return "file save";
 		}
@@ -33,6 +34,18 @@ public class ReportService {
 			return null;
 		}
 		
+	}
+
+	public List<Report> getReports(Integer folderId) {
+		try {
+			Folder folder = folderRepo.findById(folderId).get();
+			List<Report> rlist = reportRepo.findByFolder(folder).get();
+			return rlist;
+		}
+		catch (Exception e) {
+			System.out.println("Report fetch Error"+e.getMessage());
+			return null;
+		}
 	}
 	
 }

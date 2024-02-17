@@ -1,15 +1,21 @@
 package com.syntaxSavants.controller;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import com.syntaxSavants.services.ReportService;
@@ -26,9 +32,9 @@ public class ReportController {
 		final String baseDir = "E:\\SyntaxSavants";
 		byte data[];
 		try {
+			System.out.println(multipartFile.getOriginalFilename());
 			data = multipartFile.getBytes();
 			String filePath = "";
-			
 			String fileName = multipartFile.getOriginalFilename();
 			String fileType = multipartFile.getContentType();
 			
@@ -52,7 +58,7 @@ public class ReportController {
 			
 			
 			String res = null;
-			res = reportService.saveReport(filePath,fid);
+			res = reportService.saveReport(filePath,fid,multipartFile.getOriginalFilename());
 			if(res.equals("file save")) {
 				map.addAttribute("msg", "File Upload Successful");
 				return "redirect:/patient/report/"+fid;
@@ -64,6 +70,35 @@ public class ReportController {
 		} catch (IOException e) {
 			return "redirect:/web/accessDenied";
 		}
+	}
+	@RequestMapping(value = "/getPdf",method = RequestMethod.GET)
+	public ResponseEntity<InputStreamResource> load(@RequestParam(name = "file")String path) 
+	{					
+		HttpHeaders headers = new HttpHeaders();
+	    headers.add("Content-Disposition", "attachment; filename=stock.pdf");
+		
+		
+			String pic;
+			try {
+				File file = new File(path);
+
+	         	FileInputStream fis = new FileInputStream(file);            
+	            int size = fis.available();
+	            byte arr[] = new byte[size];
+	            
+	            fis.read(arr);
+	            fis.close();
+	            
+	            return ResponseEntity
+                .ok()
+                .headers(headers)
+                .body(new InputStreamResource(new ByteArrayInputStream(arr)));
+	            
+			} catch (IOException e) 
+			{
+				System.out.println(e.getMessage());
+				return null;
+			}
 	}
 	
 }

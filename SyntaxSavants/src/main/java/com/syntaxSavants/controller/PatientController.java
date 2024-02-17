@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.syntaxSavants.entities.Folder;
 import com.syntaxSavants.entities.Patient;
+import com.syntaxSavants.entities.Report;
 import com.syntaxSavants.entities.User;
 import com.syntaxSavants.services.FolderService;
 import com.syntaxSavants.services.PatientService;
+import com.syntaxSavants.services.ReportService;
 
 @Controller
 @RequestMapping("/patient")
@@ -24,6 +26,9 @@ public class PatientController {
 	
 	@Autowired
 	private FolderService folderService;
+	
+	@Autowired
+	private ReportService reportService;
 	
 	@RequestMapping("/home")
 	public String home() {
@@ -46,6 +51,7 @@ public class PatientController {
 	{
 		Object ob = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User)ob;
+		System.out.println(user);
 		if(ob!=null)
 		{
 			Patient patient = patService.get(user);
@@ -62,8 +68,10 @@ public class PatientController {
 	@RequestMapping("/report/{folderId}")
 	public String report(@PathVariable(name="folderId")Integer folderId, ModelMap map)
 	{
+		List<Report> rlist = reportService.getReports(folderId);
 		Folder folder = folderService.getFolderById(folderId);
 		map.addAttribute("folder", folder);
+		map.addAttribute("rlist",rlist);
 		return "Patient/Reports";
 	}
 	

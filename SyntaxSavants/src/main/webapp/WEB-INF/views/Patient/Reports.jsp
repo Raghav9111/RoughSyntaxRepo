@@ -1,4 +1,6 @@
 <%@include file="header.jsp"%>	    
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="sp" uri="http://java.sun.com/jsp/jstl/core"%>
     <div class="container-fluid">
         <main class="tm-main">
 
@@ -16,7 +18,6 @@
 	<thead>
 		<tr>
 			<th>File</th>
-			<th>Description</th>
 			<th>Uploaded By</th>
             <th>Date</th>
 			<th>View</th>
@@ -24,14 +25,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		<sp:forEach items="${slist}" var="obj">
+		<sp:forEach items="${rlist}" var="obj">
 			<tr>
-				<td><img src="/assets/img/2133056_document_eps_file_format_pdf_icon.png" height="20px" width="20px">&nbsp;&nbsp;${obj.rollNumber}</td>
-				<td>${obj.name}</td>
-				<td>${obj.email}</td>
-                <td>${obj.email}</td>
+				<td><img src="/assets/img/2133056_document_eps_file_format_pdf_icon.png" height="20px" width="20px">&nbsp;&nbsp;${obj.description}</td>
+				<td>${obj.uploadBy}</td>
+                <td><fmt:formatDate value="${obj.date}" pattern="dd/MM/yyyy"/></td>
 				<td>
-				<a href="#"><b>View</b> </a>
+				<a href="/report/getPdf?file=${obj.file}"><b>View</b> </a>
 				</td>
 				<td>
 				<a href="#"  style="color: red"><b>Delete</b> </a>
