@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.syntaxSavants.entities.Patient;
 import com.syntaxSavants.entities.User;
 import com.syntaxSavants.models.MedicalAuthorityModel;
 import com.syntaxSavants.models.PatientModel;
@@ -48,11 +49,13 @@ public class WebController {
 	}
 		
 	@RequestMapping(value = "/home")	
-	public String home() 
+	public String home(ModelMap map) 
 	{
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User)principal;
 		System.out.println(user);
+		Patient pat = patientService.get(user);
+		map.addAttribute("patient",pat);
 		if(user.getRole().equals("ROLE_ADMIN"))
 			return "redirect:/admin/home";
 		else if(user.getRole().equals("ROLE_MEDICAL"))
