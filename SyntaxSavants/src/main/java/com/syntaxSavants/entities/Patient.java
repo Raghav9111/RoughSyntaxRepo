@@ -1,6 +1,7 @@
 package com.syntaxSavants.entities;
 
-import java.time.LocalDate;
+import java.util.Date;
+
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -26,13 +27,13 @@ public class Patient {
 	@Column(nullable = false)
 	private String gender;
 	@Column(nullable = false)
-	private LocalDate dob;
+	private Date dob;
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	public Patient(String name, String phone, String address, String gender, LocalDate dob, User user) {
+	public Patient(String name, String phone, String address, String gender, Date dob, User user) {
 		super();
 		this.name = name;
 		this.phone = phone;

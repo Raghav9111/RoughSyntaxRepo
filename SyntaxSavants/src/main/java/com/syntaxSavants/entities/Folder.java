@@ -1,6 +1,7 @@
 package com.syntaxSavants.entities;
 
-import java.time.LocalDate;
+import java.util.Date;
+
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class Folder {
 	@Column(nullable = false)
     private String title;
 	@Column(nullable = false)
-    private LocalDate date;
+    private Date date;
 	@Column(nullable = false)
     private String description;
 

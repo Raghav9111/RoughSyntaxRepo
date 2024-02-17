@@ -1,6 +1,6 @@
 package com.syntaxSavants.entities;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -19,7 +19,7 @@ public class Report {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
-    private LocalDate date;
+    private Date date;
     @Column
     private String description;
     @Column(nullable = false)

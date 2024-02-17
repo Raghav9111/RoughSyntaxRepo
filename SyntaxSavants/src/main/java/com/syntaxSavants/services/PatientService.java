@@ -1,7 +1,9 @@
 package com.syntaxSavants.services;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,17 +29,12 @@ public class PatientService {
 		try {
 			User user = new User(model.getEmail(), model.getPassword(), "ROLE_PATIENT", true);
 			user = userRepo.save(user);
-			if(user!=null) {
-				final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
-				final LocalDate dob = LocalDate.parse(model.getDob(), dtf);
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+				Date dob = sdf.parse(model.getDob());
 				Patient patient = new Patient(model.getName(), model.getPhone(), model.getAddress(), model.getGender(),dob, user);
 				patientRepo.save(patient);
 				return "Save Successful";
 			}
-			else {
-				return "User is null";
-			}
-		}
 		catch (Exception e) {
 			return e.getMessage();
 		}
@@ -45,7 +42,7 @@ public class PatientService {
 
 	public void get(User user) 
 	{
-		Optional<Patient> op= patientRepo.findById(user.getUserId());
+		Optional<Patient> op= patientRepo.findByUser(user);
 		
 		if(op.isPresent())
 		{
