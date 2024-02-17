@@ -1,4 +1,5 @@
 <%@include file="header.jsp"%>	
+<%@taglib prefix="sp" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -92,21 +93,21 @@ body {font-family: Arial, Helvetica, sans-serif;}
 		<tr>
 			<th>Title</th>
 			<th>Date</th>
-			<th>Report</th>
-			
+			<th>Description</th>
+			<th>View</th>
+			<th>Remove</th>
 		</tr>
 	</thead>
 	<tbody>
-		<sp:forEach items="${slist}" var="obj">
+		<sp:forEach items="${flist}" var="obj">
 			<tr>
-				<td><img src="/assets/img/285658_blue_folder_icon (1).png" height="20px" width="20px">&nbsp;&nbsp;${obj.rollNumber}</td>
-				<td>${obj.name}</td>
-				<td>${obj.email}</td>
-				
+				<td><img src="/assets/img/285658_blue_folder_icon (1).png" height="20px" width="20px">&nbsp;&nbsp;${obj.title}</td>
+				<td>${obj.date}</td>
+				<td>${obj.description}</td>
 				<td>
-				<a href="feerecord/addfee/${obj.rollNumber}">	<b>View</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Delete</b></a>
-					
+				<a href="/patient/report/${obj.id}"><b>View</b></a>
 				</td>
+				<td><a href="">	<b style="color:red;">Delete</b></a></td>
 			</tr>
 		</sp:forEach>
 	</tbody>

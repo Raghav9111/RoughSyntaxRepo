@@ -1,7 +1,5 @@
 package com.syntaxSavants.models;
 
-import com.syntaxSavants.entities.Patient;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

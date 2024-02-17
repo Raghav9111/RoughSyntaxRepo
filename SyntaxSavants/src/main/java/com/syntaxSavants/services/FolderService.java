@@ -1,6 +1,7 @@
 package com.syntaxSavants.services;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,11 @@ public class FolderService {
 		catch(Exception e) {
 			return e.getMessage();
 		}
+	}
+
+	public List<Folder> getFolders(Patient patient) {
+		 List<Folder> flist = folderRepo.findByPatient(patient).get();
+		 return flist;
 	}
 
 }
