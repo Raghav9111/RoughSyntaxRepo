@@ -72,40 +72,28 @@
                         <h3 class="card-title">Update Patient Record</h3>
                     </div>
                     <div class="card-body">
-                        <form action="${ctxpath}/updatePatient" method="post">
-                            <div class="form-group">
-                                <label for="patientID">Patient ID:</label>
-                                <p>${patient.patientID}</p>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" value="${patient.name}" class="form-control" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone:</label>
-                                <input type="tel" id="phone" name="phone" value="${patient.phone}" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="address">Address:</label>
-                                <textarea id="address" name="address" class="form-control">${patient.address}</textarea>
-                            </div>
-                             <div class="form-group">
-                                <label>Gender:</label>
-                                <div>
-                                    <label for="male">Male</label>
-                                    <input type="radio" name="gender" value="male" ${patient.gender == 'male' ? 'checked' : ''}>
-                                    <label for="female">Female</label>
-                                    <input type="radio" name="gender" value="female" ${patient.gender == 'female' ? 'checked' : ''}>
-                                    <label for="other">Other</label>
-                                    <input type="radio"  name="gender" value="other" ${patient.gender == 'other' ? 'checked' : ''}>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="dob">Date of Birth:</label>
-                                <input type="date" id="dob" name="dob" value="${patient.dob}" class="form-control">
-                            </div>
+                    
+                     <form action="/patient/update" method="post">
+                              <div class="form-group">
+                                  <label for="patientID">Patient ID:</label>&nbsp;&nbsp;&nbsp;${patient.patientID}
+                              </div>
+                              <div class="form-group">
+                                  <label for="name">Name:</label>
+                                  <input type="text" id="name" name="name" value="${patient.name}" class="form-control" disabled>
+                              </div>
+                              <div class="form-group">
+                                  <label for="phone">Phone:</label>
+                                  <input type="tel" id="phone" name="phone" value="${patient.phone}" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label for="address">Address:</label>
+                                  <textarea id="address" name="address" class="form-control">${patient.address}</textarea>
+                                  
+                              </div>
+                               <input type="hidden" name="patientID" value="${patient.patientID}">
                             <button align="centre" type="submit" class="btn btn-primary">Update</button>
-                        </form>
+                          </form>
+                    
                     </div>
                 </div>
             </div>
@@ -113,11 +101,6 @@
     </main>
 </div>
 
-<footer class="tm-footer text-center">
-    <p class="mb-0">
-        All rights reserved. Designed by Your Name
-    </p>
-</footer>
 
 <script src="${ctxpath}/resources/js/jquery.min.js"></script>
 <script src="${ctxpath}/resources/js/templatemo-script.js"></script>

@@ -8,11 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.syntaxSavants.entities.Folder;
 import com.syntaxSavants.entities.Patient;
 import com.syntaxSavants.entities.Report;
 import com.syntaxSavants.entities.User;
+import com.syntaxSavants.models.UpdatePatientModel;
 import com.syntaxSavants.services.FolderService;
 import com.syntaxSavants.services.PatientService;
 import com.syntaxSavants.services.ReportService;
@@ -41,9 +43,16 @@ public class PatientController {
 		return "Patient/pendingRequest";
 	}
 	@RequestMapping("/patientid")
-	public String id()
+	public String id(ModelMap map){
 	{
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User user = (User)principal;
+		System.out.println(user);
+		Patient pat = patService.get(user);
+		map.addAttribute("patient",pat);
+
 		return "Patient/patientId";
+	}
 	}
 
 	@RequestMapping("/repo")
@@ -75,9 +84,33 @@ public class PatientController {
 		return "Patient/Reports";
 	}
 	
-	@RequestMapping("/update")
-	public String update() {
+	@RequestMapping("/updatepath" )
+	public String updatePath(ModelMap map)
+	
+	{
+
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User user = (User)principal;
+		System.out.println(user);
+		Patient pat = patService.get(user);
+		System.out.println(pat);
+		map.addAttribute("patient",pat);
+
 		return "Patient/update_patient";
+	}
+	
+	@RequestMapping("/update")
+	public String update(UpdatePatientModel model,ModelMap map) 
+	{
+	
+		String res = null;
+		res= patService.updateModel(model,model.getPatientID());
+				if(res!= null)
+		{
+			return "redirect:/patient/patientid";
+		}
+	else
+		return null;
 	}
 	
 	@RequestMapping("/updatePassword")

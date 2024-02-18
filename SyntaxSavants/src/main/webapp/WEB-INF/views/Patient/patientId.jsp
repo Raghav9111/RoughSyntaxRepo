@@ -11,27 +11,27 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Patient ID:</label>
-                            <p>${patient.patientID}</p>
+                            &nbsp;&nbsp;"${patient.patientID}"
                         </div>
                         <div class="form-group">
                             <label>Name:</label>
-                            <p>${patient.name}</p>
+                             &nbsp;&nbsp;${patient.name}
                         </div>
                         <div class="form-group">
                             <label>Phone:</label>
-                            <p>${patient.phone}</p>
+                             &nbsp;&nbsp;${patient.phone}
                         </div>
                         <div class="form-group">
                             <label>Address:</label>
-                            <p>${patient.address}</p>
+                            &nbsp;&nbsp;${patient.address}
                         </div>
                         <div class="form-group">
                             <label>Gender:</label>
-                            <p>${patient.gender}</p>
+                            &nbsp;&nbsp;${patient.gender}
                         </div>
                         <div class="form-group">
                             <label>Date of Birth:</label>
-                            <p>${patient.dob}</p>
+                            &nbsp;&nbsp;${patient.dob}
                         </div>
                     </div>
                     
@@ -39,7 +39,7 @@
             </div>
         </div>
         
-        <a href="/patient/update"> <b class="btn-sm btn-info" style="margin-left:300px">Update Details</b> </a>
+        <a href="/patient/updatepath"> <b class="btn-sm btn-info" style="margin-left:300px">Update Details</b> </a>
         <a href="/patient/updatePassword"> <b class="btn-sm btn-info" style="margin-left:130px">Update Login Credential</b> </a>
     </main>
 </div>

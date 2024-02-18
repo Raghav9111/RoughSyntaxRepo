@@ -13,6 +13,7 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.syntaxSavants.entities.Patient;
 import com.syntaxSavants.entities.User;
 import com.syntaxSavants.models.PatientModel;
+import com.syntaxSavants.models.UpdatePatientModel;
 import com.syntaxSavants.repositories.PatientRepo;
 import com.syntaxSavants.repositories.UserRepository;
 
@@ -64,4 +65,14 @@ public class PatientService {
 		return patientRepo.findById(patientId).get();
 	}
 
-}
+	public String updateModel(UpdatePatientModel model, Integer id) 
+	{
+		Patient pat = patientRepo.findById(id).get();
+		System.out.println(pat);
+		pat.setPhone(model.getPhone());
+		pat.setAddress(model.getAddress());
+		
+		patientRepo.save(pat);
+		return "Patient Saved";
+	}
+	}
