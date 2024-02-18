@@ -63,7 +63,7 @@
                 <td>${plist.gender}</td>
                 <td><fmt:formatDate value="${plist.dob}" pattern="dd/MM/yyyy"/></td>
         
-        <td><a href="./viewPatient"><b>View</b> </a>
+        <td><a href="./viewPatient/${plist.patientID}"><b>View</b> </a>
         </td>
 
 				
