@@ -13,6 +13,7 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.syntaxSavants.entities.Patient;
 import com.syntaxSavants.entities.User;
 import com.syntaxSavants.models.PatientModel;
+import com.syntaxSavants.models.UpdatePasswordModel;
 import com.syntaxSavants.models.UpdatePatientModel;
 import com.syntaxSavants.repositories.PatientRepo;
 import com.syntaxSavants.repositories.UserRepository;
@@ -74,5 +75,28 @@ public class PatientService {
 		
 		patientRepo.save(pat);
 		return "Patient Saved";
+	}
+
+
+
+	public String updateModel(UpdatePasswordModel model, User user) 
+	{
+		if(model.getOldPassword().equals(user.getPassword()))
+		{
+			if(model.getNewPassword().equals(model.getConfirmPassword()))
+			{
+				user.setPassword(model.getNewPassword());
+				userRepo.save(user);
+				return "Password Changed";
+			}
+			else
+			{
+				return null;
+			}
+		}
+		else
+		{
+			return null;
+		}
 	}
 	}

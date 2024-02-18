@@ -40,7 +40,7 @@
         </div>
         
         <a href="/patient/updatepath"> <b class="btn-sm btn-info" style="margin-left:300px">Update Details</b> </a>
-        <a href="/patient/updatePassword"> <b class="btn-sm btn-info" style="margin-left:130px">Update Login Credential</b> </a>
+        <a href="/patient/updatePasswordPath"> <b class="btn-sm btn-info" style="margin-left:130px">Update Login Credential</b> </a>
     </main>
 </div>
 

@@ -14,6 +14,7 @@ import com.syntaxSavants.entities.Folder;
 import com.syntaxSavants.entities.Patient;
 import com.syntaxSavants.entities.Report;
 import com.syntaxSavants.entities.User;
+import com.syntaxSavants.models.UpdatePasswordModel;
 import com.syntaxSavants.models.UpdatePatientModel;
 import com.syntaxSavants.services.FolderService;
 import com.syntaxSavants.services.PatientService;
@@ -113,12 +114,28 @@ public class PatientController {
 		return null;
 	}
 	
-	@RequestMapping("/updatePassword")
-	public String updatepass()
+	@RequestMapping("/updatePasswordPath")
+	public String updatepasspath()
 	{	
 		return "Patient/updatePassword"; 
 	}
 
+	@RequestMapping("/updatePassword")
+	public String updatepass(UpdatePasswordModel model)
+	{
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User user = (User)principal;
+		Patient pat = patService.get(user);
+		String res = null;
+		res= patService.updateModel(model,pat.getUser());
+				if(res!= null)
+		{
+			return "redirect:/patient/patientid";
+		}
+	else
+		return null;
+
+	}
 }
 
  
